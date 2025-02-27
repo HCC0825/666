@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何佳畅 | 软件工程学生</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 头像部分 */
+        .hero {
+            text-align: center;
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .avatar-wrapper {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        /* 内容卡片 */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 兴趣爱好展示 */
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .hobby-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .hobby-card:hover {
+            background: white;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .hobby-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 时间轴样式 */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #cbd5e1;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .hobby-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <section class="hero">
+            <div class="avatar-wrapper">
+                <img src="avatar.jpg" width="130" langth="100">
+            </div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">何佳畅</h1>
+            <p style="font-size: 1.2rem; color: #64748b;">
+                <span style="background: linear-gradient(45deg, var(--primary), var(--secondary)); 
+                          -webkit-background-clip: text; 
+                          -webkit-text-fill-color: transparent;">
+                    软件工程学生
+                </span>
+                @ 华北水利水电大学
+            </p >
+        </section>
+
+        <!-- 基本信息 -->
+        <div class="card">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">👨💻 关于我</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>🎓 教育背景</h3>
+                    <p>华北水利水电大学 - 软件工程专业 (2023级)</p >
+                </div>
+                <div class="timeline-item">
+                    <h3>🎂 基本信息</h3>
+                    <p>2004年8月25日 · 大二在读</p >
+                </div>
+            </div>
+        </div>
+
+        <!-- 兴趣爱好 -->
+        <div class="card">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">🌟 兴趣爱好</h2>
+            <div class="hobby-grid">
+                <div class="hobby-card">
+                    <i class="fas fa-basketball-ball hobby-icon"></i>
+                    <p>篮球</p >
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-music hobby-icon"></i>
+                    <p>音乐</p >
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-film hobby-icon"></i>
+                    <p>电影</p >
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-plane hobby-icon"></i>
+                    <p>旅行</p >
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-dice hobby-icon"></i>
+                    <p>麻将</p >
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-billiard-ball hobby-icon"></i>
+                    <p>台球</p >
+                </div>
+            </div>
+        </div>
+
+        <!-- 个性签名 -->
+        <div class="card" style="text-align: center; background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white;">
+            <p style="font-size: 1.2rem; font-style: italic;">
+                " 在代码世界追求完美逻辑，在生活天地享受多彩人生 "
+            </p >
+        </div>
+    </div>
+</body>
+</html>
